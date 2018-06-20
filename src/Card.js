@@ -1,6 +1,7 @@
 import React from 'react';
-
+import './Card.css';
 import CardLayout from './CardLayout';
+import InputButton from './InputButton';
 
 export default class Card extends React.Component {
     constructor(props){
@@ -25,14 +26,16 @@ export default class Card extends React.Component {
 
     render() {
         return(
-            <div>
-                
+            <div className="card-form">
+             
                 <form>
-                    <input type="button" id="button1" value="pink" style={({color:'pink'})} onClick="" />
-                    <input type="button" id="button2" value="blue" style={({color:'blue'})} onClick="" />
-                    <input type="button" id="button3" value="red" style={({color:'red'})} onClick="" />
+                    <InputButton id="button1" value="red" style={({color: 'red'})} />
+                    <InputButton id="button2" value="pink" style={({color: 'pink'})} />
+                    <InputButton id="button3" value="blue" style={({color: 'blue'})}/>
+                    <label for="title">Title:</label>
                     <input type="text" id="title" onChange="" />
-                    <input type="textarea" id="message" onChange=""/>
+                    <label for="message">Message:</label>
+                    <textarea type="textarea" id="message" onChange=""/>
                 </form>
             </div>
 

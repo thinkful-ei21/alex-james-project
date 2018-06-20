@@ -1,0 +1,30 @@
+input {
+    margin: auto;
+}
+
+input[type="button"] {
+    width: 50px;
+    margin: auto;
+}
+
+input[type="text"], label {
+    display: block;
+    width: 200px;
+    margin: auto;
+}
+
+label {
+    margin: auto;
+}
+
+textarea {
+    display: block;
+    width: 200px;
+    height: 100px;
+    margin: auto;
+}
+
+.card-form {
+    text-align: center;
+}
+

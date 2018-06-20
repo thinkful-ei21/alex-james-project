@@ -10,7 +10,8 @@ export default class Card extends React.Component {
         this.state = {
             title: 'Birthday',
             message: '',
-            colorClass: {backgroundColor: 'pink'}
+            colorClass: {backgroundColor: 'pink'},
+            titleSize: 20
         }
 
     }
@@ -24,14 +25,21 @@ export default class Card extends React.Component {
         this.setState({colorClass});
     }
 
+    setTitleSize(titleSize) {
+        this.setState({ titleSize })
+        console.log(titleSize);
+    }
+
     render() {
         return(
-            <div className="card-form">
-                <CardLayout title={this.state.title} message={this.state.message} style={this.state.colorClass}/>
-                <form>
+            <div className="container">
+                <CardLayout title={this.state.title} message={this.state.message} style={this.state.colorClass} fontSize={this.state.titleSize}/>
+                <form className='card-form'>
                     <InputButton id="button1" value="red" style={({color: 'red'})} background={({backgroundColor: 'red'})} onPress={(e)=>{this.setColorClass(e)}}/>
                     <InputButton id="button2" value="pink" style={({color: 'pink'})} background={({backgroundColor: 'pink'})} onPress={(e)=>{this.setColorClass(e)}}/>
                     <InputButton id="button3" value="blue" style={({color: 'blue'})} background={({backgroundColor: 'blue'})} onPress={(e)=>{this.setColorClass(e)}}/>
+                    <label htmlFor="title-size">Font Size:</label>
+                    <input type="number" id="title-size" min="10" max="30" onChange={(e) => this.setTitleSize(e.target.value)}/>
                     <label htmlFor="title">Title:</label>
                     <input type="text" id="title" onChange={(e)=>this.setTitle(e.target.value)} />
                     <label htmlFor="message">Message:</label>

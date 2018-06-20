@@ -1,3 +1,4 @@
+
 input {
     margin: auto;
 }
@@ -26,6 +27,9 @@ textarea {
 
 .card-form {
     text-align: center;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 100px;
 }
 
 #CardLayout {
@@ -33,5 +37,13 @@ textarea {
     height: 200px;
     background-color: pink;
     margin: auto;
+    display: inline-block;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+
+.container {
+    text-align: center;
+    margin: 10px;
 }
 

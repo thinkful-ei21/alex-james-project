@@ -10,7 +10,7 @@ export default class Card extends React.Component {
         this.state = {
             title: 'Birthday',
             message: '',
-            colorClass: 'pink'
+            colorClass: {backgroundColor: 'pink'}
         }
 
     }
@@ -27,15 +27,15 @@ export default class Card extends React.Component {
     render() {
         return(
             <div className="card-form">
-             
+                <CardLayout title={this.state.title} message={this.state.message} style={this.state.colorClass}/>
                 <form>
-                    <InputButton id="button1" value="red" style={({color: 'red'})} />
-                    <InputButton id="button2" value="pink" style={({color: 'pink'})} />
-                    <InputButton id="button3" value="blue" style={({color: 'blue'})}/>
-                    <label for="title">Title:</label>
-                    <input type="text" id="title" onChange="" />
-                    <label for="message">Message:</label>
-                    <textarea type="textarea" id="message" onChange=""/>
+                    <InputButton id="button1" value="red" style={({color: 'red'})} background={({backgroundColor: 'red'})} onPress={(e)=>{this.setColorClass(e)}}/>
+                    <InputButton id="button2" value="pink" style={({color: 'pink'})} background={({backgroundColor: 'pink'})} onPress={(e)=>{this.setColorClass(e)}}/>
+                    <InputButton id="button3" value="blue" style={({color: 'blue'})} background={({backgroundColor: 'blue'})} onPress={(e)=>{this.setColorClass(e)}}/>
+                    <label htmlFor="title">Title:</label>
+                    <input type="text" id="title" onChange={(e)=>this.setTitle(e.target.value)} />
+                    <label htmlFor="message">Message:</label>
+                    <textarea type="textarea" id="message" onChange={(e)=>this.setMessage(e.target.value)}/>
                 </form>
             </div>
 

@@ -28,3 +28,10 @@ textarea {
     text-align: center;
 }
 
+#CardLayout {
+    width: 300px;
+    height: 200px;
+    background-color: pink;
+    margin: auto;
+}
+
